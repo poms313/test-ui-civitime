@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --color-light-blue: #dde1e7ff;
     --color-blue: #1b39e2ff;
@@ -8,54 +12,153 @@
 
 body {
     background-color: var(--color-light-blue);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
 }
 
 #temp-style {
-    width: 100%;
+    /*   width: 100%;
     height: 100%;
+    in container?*/
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #container {
-    width: 90%;
+    margin: 60px auto 100px;
     border: 2px solid var(--color-purple);
 }
 
 #header {
     background-color: var(--color-purple);
-    text-align: center;
 }
 
 #header h1 {
     margin: 0;
     color: var(--color-white);
     text-transform: uppercase;
-}
-
-#header h1 {
-    margin: 0;
-    color: var(--color-white);
-    text-transform: uppercase;
+    line-height: 45px;
 }
 
 #header+p {
+    margin: 0;
     font-weight: 600;
 }
 
-form#UserAvatarChoice hr {
-    color: var(--color-grey);
+form#UserAvatarChoice #avatars img {
+    width: 170px;
+    height: 170px;
 }
 
-form#UserAvatarChoice {
-    padding: 15px;
+form#UserAvatarChoice hr {
+    width: 70%;
+    border-top: 2px solid var(--color-grey);
+    margin-top: 50px;
+}
+
+form#UserAvatarChoice #skinColorChoice {
+    margin: 20px auto 30px;
+}
+
+form#UserAvatarChoice #shirtColorChoice {
+    margin: auto;
 }
 
 form#UserAvatarChoice button {
-    padding: 15px;
+    margin: 30px auto 30px;
+    padding: 15px 20px;
     background-color: var(--color-blue);
     color: var(--color-white);
     text-transform: uppercase;
     border-radius: 60px;
+    border: none;
+    box-shadow: 2px 2px 3px var(--color-grey);
+}
+
+form#UserAvatarChoice #avatars,
+form#UserAvatarChoice #skinColorChoice,
+form#UserAvatarChoice #shirtColorChoice {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+form#UserAvatarChoice #skinColorChoice img,
+form#UserAvatarChoice #shirtColorChoice img {
+    width: 54px;
+    height: 54px;
+}
+
+@media screen and (min-width: 350px) {
+    form#UserAvatarChoice #avatars,
+    form#UserAvatarChoice #skinColorChoice,
+    form#UserAvatarChoice #shirtColorChoice {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-width: 800px) {
+    #container {
+        width: 410px;
+        height: 610px;
+    }
+    #header+p {
+        line-height: 80px;
+    }
+    form#UserAvatarChoice #avatars {
+        max-width: 300px;
+        margin: auto;
+        justify-content: space-around;
+    }
+    form#UserAvatarChoice hr {
+        width: 300px;
+    }
+    form#UserAvatarChoice #skinColorChoice,
+    form#UserAvatarChoice #shirtColorChoice {
+        justify-content: space-between;
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #container {
+        width: 590px;
+        height: 480px;
+        margin: 115px auto 75px;
+    }
+    #header h1 {
+        line-height: 30px;
+        font-size: 20px;
+    }
+    #header+p {
+        line-height: 60px;
+    }
+    form#UserAvatarChoice #avatars {
+        width: 380px;
+        margin: auto;
+        justify-content: space-around;
+    }
+    form#UserAvatarChoice #avatars img {
+        width: 130px;
+        height: 130px;
+    }
+    form#UserAvatarChoice hr {
+        margin-top: 40px;
+    }
+    form#UserAvatarChoice hr,
+    form#UserAvatarChoice #skinColorChoice,
+    form#UserAvatarChoice #shirtColorChoice {
+        max-width: 240px;
+    }
+    form#UserAvatarChoice #skinColorChoice img,
+    form#UserAvatarChoice #shirtColorChoice img {
+        width: 40px;
+        height: 40px;
+    }
+    form#UserAvatarChoice button {
+        margin: 25px auto 25px;
+        padding: 10px 20px;
+    }
 }
