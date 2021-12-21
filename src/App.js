@@ -13,15 +13,9 @@ import green from './assets/color-88C10F.svg';
 import red from './assets/color-FF1414.svg';
 import striped from './assets/color-striped.svg';
 
-
-
-const App = () => {
-    return <div id='temp-style'>
-        <div id="container">
-            <div id="header">
-                <h1>Profil</h1>
-            </div>
-            <p>Lequel de ces deux avatars préférez-vous?</p>
+class UserAvatarChoice extends React.Component {
+    render() {
+        return (
             <form id="UserAvatarChoice">
                 <div id='avatars'>
                     <img id='man' src={man} alt='man avatar'></img>
@@ -44,6 +38,19 @@ const App = () => {
                 </div>
                 <button>Valider</button>
             </form>
+        )
+    }
+}
+
+
+const App = () => {
+    return <div id='temp-style'>
+        <div id="container">
+            <div id="header">
+                <h1>Profil</h1>
+            </div>
+            <p>Lequel de ces deux avatars préférez-vous?</p>
+            <UserAvatarChoice />
         </div>
     </div>
 }
